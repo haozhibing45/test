@@ -16,7 +16,7 @@ using Log4Mongo;
 //[assembly: log4net.Config.XmlConfigurator(ConfigFile = "log4net.config", Watch = true)]
 namespace Log4NetIntoMongodb.Controllers
 {
-    
+
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -118,10 +118,10 @@ namespace Log4NetIntoMongodb.Controllers
             //            #endregion
 
 
-            //            XmlConfigurator.Configure(rep, log4netConfig["log4net"]);
-            //            ILog log = LogManager.GetLogger(rep.Name, "syslog");
+            //                        XmlConfigurator.Configure(rep, log4netConfig["log4net"]);
+            //                        ILog log = LogManager.GetLogger(rep.Name, "syslog");
 
-           // XmlConfigurator.Configure();
+            XmlConfigurator.Configure();
             LogInfo info = new LogInfo
             {
                 UserName = "admin",
@@ -134,51 +134,53 @@ namespace Log4NetIntoMongodb.Controllers
                     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36",
                 Referrer = "www.baidu.com"
             };
-            MongoDBAppender appender = new MongoDBAppender();
-            appender.CollectionName = DateTime.Now.ToString("yyyyMMdd");
-            appender.ConnectionString = "mongodb://root:123456@127.0.0.1:27017";
-            appender.Name = "MongoDBAppender";
-            MongoAppenderFileld filled = new MongoAppenderFileld();
-            filled.Name = "userName";
-            filled.Layout = new RawPropertyLayout { Key = "userName" };
-            appender.AddField(filled);
+            ILog log = LogManager.GetLogger("syslog");
 
-            MongoAppenderFileld filled1 = new MongoAppenderFileld();
-            filled1.Name = "userType";
-            filled1.Layout = new RawPropertyLayout { Key = "userType" };
-            appender.AddField(filled1);
-            MongoAppenderFileld filled2 = new MongoAppenderFileld();
-            filled2.Name = "status";
-
-            filled2.Layout = new RawPropertyLayout { Key = "status" };
-            appender.AddField(filled2);
-            MongoAppenderFileld filled3 = new MongoAppenderFileld();
-            filled3.Name = "failPwd";
-            filled3.Layout = new RawPropertyLayout { Key = "failPwd" };
-            appender.AddField(filled3);
-            MongoAppenderFileld filled4= new MongoAppenderFileld();
-            filled4.Name = "myLogIP";
-            filled4.Layout = new RawPropertyLayout { Key = "myLogIP" };
-            appender.AddField(filled4);
-            MongoAppenderFileld filled5 = new MongoAppenderFileld();
-            filled5.Name = "myLogIPLocation";
-            filled5.Layout = new RawPropertyLayout { Key = "myLogIPLocation" };
-            appender.AddField(filled5);
-            MongoAppenderFileld filled6 = new MongoAppenderFileld();
-            filled6.Name = "userAgent";
-            filled6.Layout = new RawPropertyLayout { Key = "userAgent" };
-            appender.AddField(filled6);
-            MongoAppenderFileld filled7 = new MongoAppenderFileld();
-            filled7.Name = "referrer";
-            filled7.Layout = new RawPropertyLayout { Key = "referrer" };
-            appender.AddField(filled7);
-            MongoAppenderFileld filled8 = new MongoAppenderFileld();
-            filled8.Name = "CreateTime";
-            filled8.Layout = new RawPropertyLayout { Key = "CreateTime" };
-            appender.AddField(filled8);
-
-            ILoggerRepository rep = LogManager.CreateRepository(Guid.NewGuid().ToString());
-            BasicConfigurator.Configure(rep, appender);
+            //                       MongoDBAppender appender = new MongoDBAppender();
+            //                       appender.CollectionName = DateTime.Now.ToString("yyyyMMdd");
+            //                       appender.ConnectionString = "mongodb://root:123456@127.0.0.1:27017";
+            //                       appender.Name = "MongoDBAppender";
+            //                       MongoAppenderFileld filled = new MongoAppenderFileld();
+            //                       filled.Name = "userName";
+            //                       filled.Layout = new RawPropertyLayout { Key = "userName" };
+            //                       appender.AddField(filled);
+            //            
+            //                       MongoAppenderFileld filled1 = new MongoAppenderFileld();
+            //                       filled1.Name = "userType";
+            //                       filled1.Layout = new RawPropertyLayout { Key = "userType" };
+            //                       appender.AddField(filled1);
+            //                       MongoAppenderFileld filled2 = new MongoAppenderFileld();
+            //                       filled2.Name = "status";
+            //            
+            //                       filled2.Layout = new RawPropertyLayout { Key = "status" };
+            //                       appender.AddField(filled2);
+            //                       MongoAppenderFileld filled3 = new MongoAppenderFileld();
+            //                       filled3.Name = "failPwd";
+            //                       filled3.Layout = new RawPropertyLayout { Key = "failPwd" };
+            //                       appender.AddField(filled3);
+            //                       MongoAppenderFileld filled4= new MongoAppenderFileld();
+            //                       filled4.Name = "myLogIP";
+            //                       filled4.Layout = new RawPropertyLayout { Key = "myLogIP" };
+            //                       appender.AddField(filled4);
+            //                       MongoAppenderFileld filled5 = new MongoAppenderFileld();
+            //                       filled5.Name = "myLogIPLocation";
+            //                       filled5.Layout = new RawPropertyLayout { Key = "myLogIPLocation" };
+            //                       appender.AddField(filled5);
+            //                       MongoAppenderFileld filled6 = new MongoAppenderFileld();
+            //                       filled6.Name = "userAgent";
+            //                       filled6.Layout = new RawPropertyLayout { Key = "userAgent" };
+            //                       appender.AddField(filled6);
+            //                       MongoAppenderFileld filled7 = new MongoAppenderFileld();
+            //                       filled7.Name = "referrer";
+            //                       filled7.Layout = new RawPropertyLayout { Key = "referrer" };
+            //                       appender.AddField(filled7);
+            //                       MongoAppenderFileld filled8 = new MongoAppenderFileld();
+            //                       filled8.Name = "CreateTime";
+            //                       filled8.Layout = new RawPropertyLayout { Key = "CreateTime" };
+            //                       appender.AddField(filled8);
+            //            
+//            ILoggerRepository rep = LogManager.CreateRepository(Guid.NewGuid().ToString());
+            //                       BasicConfigurator.Configure(rep, appender);
             //BasicConfigurator.Configure(appender);
             GlobalContext.Properties["userName"] = info.UserName;
             GlobalContext.Properties["userType"] = info.UserType;
@@ -189,12 +191,14 @@ namespace Log4NetIntoMongodb.Controllers
             GlobalContext.Properties["userAgent"] = info.UserAgent;
             GlobalContext.Properties["referrer"] = info.Referrer;
             GlobalContext.Properties["CreateTime"] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            ILog log = LogManager.GetLogger(rep.Name,"syslog");
+//            ILog log = LogManager.GetLogger(rep.Name,"syslog");
             for (int i = 0; i < 100; i++)
             {
                 Console.WriteLine(i);
                 log.InfoFormat("测试记录{0}", i);
             }
+            //            ILog log = new MongodbLog().RetLog(info);
+            //            log.Info("测试");
             return View();
         }
 
@@ -213,8 +217,8 @@ namespace Log4NetIntoMongodb.Controllers
                     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36",
                 Referrer = "www.baidu.com"
             };
-//            ILog log =new Log4netMongodb.MongodbLog().RetLog(info);
-//            log.Info("测试");
+            ILog log = new MongodbLog().RetLog(info);
+            log.Info("测试");
             return View();
         }
 

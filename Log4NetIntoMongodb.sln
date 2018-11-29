@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log4NetIntoMongodb", "Log4N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webtestadmin", "webtestadmin\webtestadmin.csproj", "{B5857777-0DA5-44E4-967E-828642D991D7}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Log4netMongodb", "Log4netMongodb\Log4netMongodb.csproj", "{C16CD5BC-D89D-44F3-8439-9ECD936647CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B5857777-0DA5-44E4-967E-828642D991D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5857777-0DA5-44E4-967E-828642D991D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5857777-0DA5-44E4-967E-828642D991D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C16CD5BC-D89D-44F3-8439-9ECD936647CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C16CD5BC-D89D-44F3-8439-9ECD936647CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C16CD5BC-D89D-44F3-8439-9ECD936647CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C16CD5BC-D89D-44F3-8439-9ECD936647CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
