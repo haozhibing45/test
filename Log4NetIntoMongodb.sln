@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log4NetMongodbCon", "Log4NetMongodbCon\Log4NetMongodbCon.csproj", "{674F8125-FDAF-4026-977B-AC737B4E8B5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log4NetIntoMongodb", "Log4NetIntoMongodb\Log4NetIntoMongodb.csproj", "{A5E048DA-BB67-4202-B872-DC92939410CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webtestadmin", "webtestadmin\webtestadmin.csproj", "{B5857777-0DA5-44E4-967E-828642D991D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{674F8125-FDAF-4026-977B-AC737B4E8B5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{674F8125-FDAF-4026-977B-AC737B4E8B5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{674F8125-FDAF-4026-977B-AC737B4E8B5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{674F8125-FDAF-4026-977B-AC737B4E8B5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5E048DA-BB67-4202-B872-DC92939410CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5E048DA-BB67-4202-B872-DC92939410CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5E048DA-BB67-4202-B872-DC92939410CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5E048DA-BB67-4202-B872-DC92939410CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5857777-0DA5-44E4-967E-828642D991D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5857777-0DA5-44E4-967E-828642D991D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5857777-0DA5-44E4-967E-828642D991D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5857777-0DA5-44E4-967E-828642D991D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D0D3D96-3696-4EAB-B715-35A697F9082A}
+	EndGlobalSection
+EndGlobal
